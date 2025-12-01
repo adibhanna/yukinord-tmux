@@ -1,24 +1,44 @@
-this is a simpified fork of https://github.com/janoamaral/tokyo-night-tmux all credit goes to the author ❤️.
+# yukinord-tmux
 
-I updated the colors to match the gruvbox colorscheme used in neovim and ghostty terminal.
+A simplified fork of [tokyo-night-tmux](https://github.com/janoamaral/tokyo-night-tmux) - all credit goes to the author.
 
+Updated colors to match the [yukinord.nvim](https://github.com/adibhanna/yukinord.nvim) colorscheme.
+
+## Installation
+
+```bash
+# Add to your tmux.conf
+set -g @plugin "adibhanna/yukinord-tmux"
+
+# Or for local installation
+run-shell ~/path/to/yukinord-tmux/yukinord.tmux
 ```
-set -g @plugin "adibhanna/gruvbox-tmux"
-set -g @gruvbox-theme dark # dark or light
 
-# Optional: Configure GitHub status display (default: on)
-set -g @gruvbox-tmux_github_status on # on or off
+## Configuration
+
+```bash
+# Optional settings
+set -g @yukinord-tmux_window_id_style none      # none, digital, roman, super, sub, dsquare, hsquare
+set -g @yukinord-tmux_pane_id_style super       # none, digital, roman, super, sub, dsquare, hsquare
+set -g @yukinord-tmux_zoom_id_style none        # none, digital, roman, super, sub, dsquare, hsquare
+set -g @yukinord-tmux_session_bg "on"           # on or off (transparent)
+set -g @yukinord-tmux_window_center "off"       # on or off
+set -g @yukinord-tmux_github_status on          # on or off
+
+# Path widget (disabled by default)
+set -g @yukinord-tmux_show_path 1
+set -g @yukinord-tmux_path_format relative      # relative or full
 ```
 
 ## Features
 
 - **Git Status**: Shows current branch, sync status, and change counts
 - **GitHub Integration**: Displays open pull requests and issues count for the current repository
-  - 󰘬 Pull requests (magenta)
-  - 󰌶 Issues (red)
+  - Pull requests (magenta)
+  - Issues (red)
   - Requires GitHub CLI (`gh`) for authenticated requests or falls back to unauthenticated API calls
   - Results are cached for 5 minutes to improve performance
-  - Can be disabled with `set -g @gruvbox-tmux_github_status off`
+  - Can be disabled with `set -g @yukinord-tmux_github_status off`
 - **Custom Window Numbers**: Configurable window and pane number styles
 - **Path Widget**: Shows current directory path
 
@@ -32,10 +52,6 @@ For the best experience with GitHub integration:
 
 Without GitHub CLI, the extension falls back to unauthenticated API requests which are rate-limited to 60 requests per hour per IP address.
 
-## Dark
+## Screenshot
 
-![dark](img/dark.png)
-
-## Light
-
-![light](img/light.png)
+![yukinord-tmux](img/dark.png)
