@@ -54,4 +54,4 @@ Without GitHub CLI, the extension falls back to unauthenticated API requests whi
 
 ## Screenshot
 
-![yukinord-tmux](img/dark.png)
+![yukinord-tmux](img/dark1.png)
